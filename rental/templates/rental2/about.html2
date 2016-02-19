@@ -1,0 +1,23 @@
+{% extends "rental/base.html" %}
+{% block content %}
+	<div id="about-main-div">
+		<div class="about-content-div">
+			<h1>丹尼熊的租屋天地</h1>
+			<h6>讓你在旅行中尋找到溫暖的小確幸</h6>
+<p>{{ about.description }}</p>
+        <h3>交通資訊</h3>
+        {% if transportation_list %}
+          <ul>
+            {% for transportation in transportation_list %}
+              <p>
+                {{ transportation.name }}</br>
+                {{ transportation.description }}
+              </p>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p>please google it.</p>
+        {% endif %}
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,86 @@
+body {
+	margin: auto;
+        width: 75%;
+}
+
+div {
+	margin: 20px 0px;
+        border: 1px dotted red;
+}
+
+.index-main-box {
+	width: 90%;
+	height: 500px;
+	margin: auto;
+}
+
+.index-sub-box {
+	width: 90%;
+	margin: auto;
+	height: 240px;
+}
+
+.index-about {
+	float: left;
+	width: 30%;
+	height: 200px;
+}
+
+.index-about-transbox {
+	margin: 50px 20px;
+	background-color: #ffffff;
+	opacity: 0.6;
+	height: 100px;
+}
+
+.index-about-transbox:hover {
+	margin: 50px 20px;
+	background-color: white;
+	opacity: 1;
+	height: 100px;
+}
+
+.index-about-transbox p {
+  font-size: 40px;
+  margin: 20px 0px;
+  color: #000000;
+  text-align: center;
+	border: 1px solid red;
+}
+
+.index-rooms {
+        float: left;
+	width: 30%;
+	height: 200px;
+	position: relative;
+	left: 4.5%;
+}
+
+.index-reservation {
+        float: right;
+	width: 30%;
+	height: 200px;
+}
+
+.about-main-div {
+        width: 90%;
+        height: 1000px;
+        margin: auto;
+	
+}
+
+.about-content-div {
+	width: 80%;
+	background-color: white;
+	opacity: 0.8;
+	height: 800px;
+	margin: 100px auto;
+	text-align: center;
+}
+
+.about-content-div p {
+	width: 60%;
+	margin: auto;
+	text-align: left;
+	text-indent: 50px;
+}

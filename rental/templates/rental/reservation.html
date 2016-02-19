@@ -1,0 +1,22 @@
+{% extends "rental/base.html" %}
+{% block content %}
+<div class="content-div">
+	<div class="title-div">
+		<p>訂房需知</p>
+	</div>
+	<div class="title-image-div" id="reservation-title-image-div"></div>
+	<div class="gap-div"></div>
+	<div id="reservation-main-div">
+		<div id="reservation-content-div">
+			<h3>訂房規則</h3>
+			<br/>
+			<p>{{ reservation.description }}</p>
+			<br/>
+			<h3>聯絡方式</h3>
+			<p>手機 : {{ contact_info.phone_number }}</p>
+			<p>Line : {{ contact_info.line }}</p>
+			<p>Facebook : <a href="{{ contact_info.facebook }}">{{ contact_info.facebook_des }}</a></p>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This website is built for dannys rental business.">
+    <meta name="author" content="Edison Peng">
+
+    <title>丹尼日租套房</title>
+    <link rel="stylesheet" href="{% static "rental/style.css" %}"> 
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<style>
+		#index-about-div {
+                        background: url({{ home.about_photo.url }});
+                        background-size: cover;
+		}
+		#index-reservation-div {
+                        background: url({{ home.transportation_photo.url }});
+                        background-size: cover;
+		}
+                #about-title-image-div {
+			background: url({% static "rental/table.jpeg" %}) center center;
+			background-size: cover;
+		}
+                #rooms-title-image-div {
+                        background: url({% static "rental/pallow.jpg" %}) center center;
+                        background-size: cover;
+                }
+                #reservation-title-image-div {
+                        background: url({% static "rental/flower.jpeg" %}) center center;
+                        background-size: cover;
+                }
+		#reservation-main-div {
+			background: url({% static "rental/city.jpg" %}) center center;
+                        background-size: cover;
+		}
+	</style>
+  </head>
+  <body>
+      <nav class="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/rental/">丹尼日租套房</a>
+          </div>
+          <div>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/rental/about/">關於丹尼</a></li>
+              <li><a href="/rental/rooms/">房型介紹</a></li>
+              <li><a href="/rental/reservation/">訂房須知</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+        {% block content %}{% endblock %}
+
+      <footer>
+	<hr />
+	<div>
+        	<img src="{% static "rental/phone.png" %}" />
+		{{ contact_info.phone_number }}
+		<img src="{% static "rental/facebook.png" %}"/>
+	        <a href="{{ contact_info.facebook }}">{{ contact_info.facebook_des }}</a>
+        	<img src="{% static "rental/images.png" %}"/>
+		{{ contact_info.line }}
+	</div>
+      </footer>
+	<br />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="{% static "rental/common.js" %}"></script>
+  </body>
+</html>
