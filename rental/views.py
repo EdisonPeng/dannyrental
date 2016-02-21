@@ -8,20 +8,20 @@ def index(request):
     return render(request, "rental/index.html", context)
 
 def about(request):
-    about = get_object_or_404(About, pk=1)
+    abouts = get_list_or_404(About)
     transportation_list = get_list_or_404(Transportation)
     contact_info = get_object_or_404(ContactInfo, pk=1)
-    context = {'about': about, 'transportation_list': transportation_list, 'contact_info': contact_info}
+    context = {'abouts': abouts, 'transportation_list': transportation_list, 'contact_info': contact_info}
     return render(request, "rental/about.html", context)
 
 def rooms(request):
-    rooms = Room.objects.all()
+    rooms = get_list_or_404(Room)
     contact_info = get_object_or_404(ContactInfo, pk=1)
     context = {'rooms': rooms, 'contact_info': contact_info}
     return render(request, "rental/rooms.html", context)
 
 def reservation(request):
-    reservation = get_object_or_404(Reservation, pk=1)
+    reservations = get_list_or_404(Reservation)
     contact_info = get_object_or_404(ContactInfo, pk=1)
-    context = {'reservation': reservation, 'contact_info': contact_info}
+    context = {'reservations': reservations, 'contact_info': contact_info}
     return render(request, "rental/reservation.html", context)

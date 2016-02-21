@@ -8,20 +8,12 @@
     <meta name="description" content="This website is built for dannys rental business.">
     <meta name="author" content="Edison Peng">
 
-    <title>丹尼日租套房</title>
+    <title>DannyHouse逢甲日租</title>
     <link rel="stylesheet" href="{% static "rental/style.css" %}"> 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
 	<style>
-		#index-about-div {
-                        background: url({{ home.about_photo.url }});
-                        background-size: cover;
-		}
-		#index-reservation-div {
-                        background: url({{ home.transportation_photo.url }});
-                        background-size: cover;
-		}
                 #about-title-image-div {
 			background: url({% static "rental/table.jpeg" %}) center center;
 			background-size: cover;
@@ -41,34 +33,41 @@
 	</style>
   </head>
   <body>
+      <div class=body-div>
       <nav class="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/rental/">丹尼日租套房</a>
-          </div>
+            <a class="navbar-brand" href="/rental/"><img src={% static "rental/logo.png" %} /></a>
+        </div>
           <div>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/rental/about/">關於丹尼</a></li>
-              <li><a href="/rental/rooms/">房型介紹</a></li>
-              <li><a href="/rental/reservation/">訂房須知</a></li>
+              <li><a href="/rental/about/">|關於我們</a></li>
+              <li><a href="/rental/rooms/">|房型介紹</a></li>
+              <li><a href="/rental/reservation/">|訂房須知</a></li>
             </ul>
           </div>
-        </div>
       </nav>
 
         {% block content %}{% endblock %}
-
+      <br/>
+      <div class=gap-div></div>
       <footer>
-	<hr />
-	<div>
-        	<img src="{% static "rental/phone.png" %}" />
-		{{ contact_info.phone_number }}
-		<img src="{% static "rental/facebook.png" %}"/>
-	        <a href="{{ contact_info.facebook }}">{{ contact_info.facebook_des }}</a>
-        	<img src="{% static "rental/images.png" %}"/>
-		{{ contact_info.line }}
-	</div>
+		<div class=footer-div>
+			<div id=qrcode-div>
+		                <img src="{{ contact_info.line_photo.url }}"/>
+                                <img src="{{ contact_info.wechat_photo.url }}"/>
+			</div>
+			<div id=info-div>
+		                電話：{{ contact_info.phone_number }}</br>
+                                Line：{{ contact_info.line }}</br>
+		                微信：{{ contact_info.wechat }}</br>
+			</div>
+		</div>
+		<div class=footer-div>
+			CopyRight © 2016<br/>
+			所有版權未經 逢甲日租DannyHouse 合法授權任意複制 版權必究</br>
+		</div>
       </footer>
-	<br />
+    </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

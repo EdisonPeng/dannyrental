@@ -1,10 +1,6 @@
 from django.db import models
 
 class Home(models.Model):
-    room_photo = models.ImageField(upload_to='images/home_photo/')
-    about_photo = models.ImageField(upload_to='images/home_photo/')
-    transportation_photo = models.ImageField(upload_to='images/home_photo/')
-
     def __unicode__(self):
         return "Home"
 
@@ -18,6 +14,9 @@ class HomePhoto(models.Model):
 
 class About(models.Model):
     description = models.TextField()
+
+    def __unicode__(self):
+        return str(self.id)
 
 class Room(models.Model):
     name = models.CharField(max_length=50)
@@ -43,14 +42,25 @@ class Transportation(models.Model):
         return self.name
 
 class Reservation(models.Model):
-    description = models.TextField()
-
-class ContactInfo(models.Model):
-    name = models.CharField(max_length=50)
-    phone_number = models.CharField(max_length=50)
-    line = models.CharField(max_length=50)
-    facebook = models.URLField()
-    facebook_des = models.CharField(max_length=50)
+    topic = models.CharField(max_length=50)
 
     def __unicode__(self):
-        return self.name
+        return self.topic
+
+class TopicContent(models.Model):
+    reservation = models.ForeignKey(Reservation)
+    subtopic = models.CharField(max_length=50, blank=True)
+    description = models.TextField(blank=True)
+
+    def __unicode__(self):
+        return self.subtopic
+
+class ContactInfo(models.Model):
+    phone_number = models.CharField(max_length=50)
+    line = models.CharField(max_length=50)
+    line_photo = models.ImageField(upload_to='images/contact_photo/', blank=True)
+    wechat = models.CharField(max_length=50)
+    wechat_photo = models.ImageField(upload_to='images/contact_photo/', blank=True)
+
+    def __unicode__(self):
+        return self.phone_number

@@ -8,33 +8,18 @@
 	<div class="about-content-div" id="about-content-div-1">
 		<h3>緣起</h3>
 		<br/>
+{% for about in abouts %}
 		<p>{{ about.description }}</p>
+{% endfor %}
 	</div>
 	<div class="about-content-div" id="about-content-div-2">
-		<h3>理念</h3>
-		</br>
-		<p>
-雙子星雲端運算公司的名稱，來自美國
-太空總署(NASA)當年登陸月球前的雙子
-星計畫，以及代表著Cloud OS與國際雲
-端開源軟體OpenStack有如雙胞胎
-一般，相輔相成。未來雙子星也將配合政府
-政策如台美矽谷發展，以
-及國際市場趨勢，前進美
-國、日本等國家發展。期
-望很快能在國際市場上為
-台灣發光發亮。
-		</p>
-	</div>
-	<div class="about-content-div" id="about-content-div-3">
 		<h3>交通</h3>
 		</br>
         {% if transportation_list %}
             {% for transportation in transportation_list %}
               
-                <center><b>{{ transportation.name }}</b></center>
-                <p>{{ transportation.description }}
-              </p>
+                <h4>{{ transportation.name }}</h4>
+                <p>{{ transportation.description }}</p></br>
             {% endfor %}
         {% else %}
           <p>please google it.</p>
